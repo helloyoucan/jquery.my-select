@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!--<style>
+			.my-select {display: inline-block;border-left: 1px solid #e1e3e4;border-right: 1px solid #e1e3e4;border-radius: 2px;font-family: "microsoft yahei";font-size: 0;}		
+			.my-select>a {display: inline-block;font-size: 14px;line-height: 2;padding: 0 10px;color: #323437;border-top: 1px solid #e1e3e4;border-bottom: 1px solid #e1e3e4;background-color: #fff;text-decoration: none}
+			.my-select>a:hover {background-color: #f3f4f4}
+			.my-select.disabled a {background-color: #eee;cursor: not-allowed;}
+			.my-select>a.active {background-color: #4da7fd;border-color: #4aa6fc;color: #fff}
+		</style>-->
+	</head>
+
+	<body>
+		<div>
+			单选：
+			<select class="select" name="a">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3" selected="selected">3</option>
+			</select>
+			多选的：
+			<select class="select" name="aa" multiple="multiple">
+				<option value="">4</option>
+				<option value="5" selected="selected">5</option>
+				<option value="6">6</option>
+			</select>
+			disable：
+			<select class="select" name="aaa" disabled="disabled">
+				<option value="">7</option>
+				<option value="8">8</option>
+				<option value="9" selected="selected">9</option>
+			</select>
+			<br />
+			<br />
+			<button id="btn">Change</button>
+		</div>
+		<script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.my-select.min.js"></script>
+		<script>
+			$('.select').MySelect({
+				afterSelect: function(val) {//点击后的回调函数
+					//console.log('afterSelect:' + val)
+				}
+			});
+			$('#btn').click(function() {
+				$('.select').not(':disabled').val('').change();
+			});
+		</script>
+	</body>
+
+</html>
