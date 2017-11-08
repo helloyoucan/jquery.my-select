@@ -46,7 +46,7 @@
 			}
 		});
 		$('#btn').click(function() {
-			$('.select').not(':disabled').val('').change();
+			$('.select').not(':disabled').val('').change();//修改select的值
 		});
 </script>
 ```
