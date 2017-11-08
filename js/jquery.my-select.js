@@ -41,14 +41,16 @@
 	}
 	MySelect.prototype._addStyle = function() {
 		//添加css
-		var styleStr = '<style>' +
-			'.my-select {display: inline-block;border-left: 1px solid #e1e3e4;border-right: 1px solid #e1e3e4;border-radius: 2px;font-family: "microsoft yahei";font-size: 0;}' +
-			'.my-select>a {display: inline-block;font-size: 14px;line-height: 2;padding: 0 10px;color: #323437;border-top: 1px solid #e1e3e4;border-bottom: 1px solid #e1e3e4;background-color: #fff;text-decoration: none}' +
-			'.my-select>a:hover {background-color: #f3f4f4}' +
-			'.my-select.disabled a {background-color: #eee;cursor: not-allowed;}' +
-			'.my-select>a.active {background-color: #4da7fd;border-color: #4aa6fc;color: #fff}' +
-			'</style>';
-		$('head').eq(0).append(styleStr);
+		if($('style#style-my-select').length < 1) {//已经存在style
+			var styleStr = '<style id="style-my-select">' +
+				'.my-select {display: inline-block;border-left: 1px solid #e1e3e4;border-right: 1px solid #e1e3e4;border-radius: 2px;font-family: "microsoft yahei";font-size: 0;}' +
+				'.my-select>a {display: inline-block;font-size: 14px;line-height: 2;padding: 0 10px;color: #323437;border-top: 1px solid #e1e3e4;border-bottom: 1px solid #e1e3e4;background-color: #fff;text-decoration: none}' +
+				'.my-select>a:hover {background-color: #f3f4f4}' +
+				'.my-select.disabled a {background-color: #eee;cursor: not-allowed;}' +
+				'.my-select>a.active {background-color: #4da7fd;border-color: #4aa6fc;color: #fff}' +
+				'</style>';
+			$('head').eq(0).append(styleStr);
+		}
 		this.$el.css({
 			visibility: 'hidden',
 			width: 0,
