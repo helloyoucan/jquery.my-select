@@ -1,5 +1,6 @@
 # jquery.my-select
-一个简单的基于jquery的select插件
+一个简单的基于jquery的select插件    
+支持ie9+
 
 #### 效果预览：
 
